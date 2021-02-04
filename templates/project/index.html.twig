@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+    <div class="projet">
+        <div class="projet_image">
+
+        </div>
+        <div class="projet_title">
+
+        </div>
+        <div class="projet_info">
+            <h4>description: {{ project.description }}</h4>
+            <h4>language principal: {{ project.langage }}</h4>
+            <h4>date: {{ project.date|date("d/m/Y") }}</h4>
+            <h4>dépôt github: {{ project.link }}</h4>
+        </div>
+    </div>
+{% endblock %}
+                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
+                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
+
+    <a href="{{ path('project_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="nav-text">
+        <h2>Portfolio</h2>
+        <h3>Marcel Lavergne</h3>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                {% if app.user %}
+                    <a class="nav-link" href="{{ path('app_logout') }}" title="Deconnecter"> <i class="fa fa-2x fa-user"></i></a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('app_login') }}" title="Connecter"> <i class="fa fa-2x fa-user"></i></a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>

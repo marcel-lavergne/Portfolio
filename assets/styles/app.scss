@@ -1,0 +1,28 @@
+.projects{
+  display:flex;
+  flex-direction: column;
+}
+.projects_image-logo{
+  display: flex;
+  flex-direction: row;
+}
+.projects_project{
+  display: flex;
+  flex-direction: row;
+}
+.projects_text{
+  display: flex;
+  flex-direction: row;
+}
+p {
+  color:#808080;
+}
+h3{
+  color:#8ab5c5;
+}
+body{
+  background-color:#141414;
+}
+navbar{
+  color: #e50914;
+}
