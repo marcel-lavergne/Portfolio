@@ -2,27 +2,162 @@
   display:flex;
   flex-direction: column;
 }
-.projects_image-logo{
-  display: flex;
-  flex-direction: row;
-}
+
 .projects_project{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+
 }
 .projects_text{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  font-size: 25px;
+}
+.projects_text-position{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.login-message{
+  color:white;
+}
+hr {
+  height: 6px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #15293f;
+  margin-bottom: 10px;
 }
 p {
-  color:#808080;
+  color:white;
+}
+a{
+  list-style: none;
+  text-decoration: none;
+  color:#f61a17;
 }
 h3{
-  color:#8ab5c5;
+  color:white;
 }
 body{
-  background-color:#141414;
+  background-color:#101010;
 }
-navbar{
-  color: #e50914;
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:#101010;
 }
+.nav-text{
+  display: flex;
+  flex-direction: row;
+}
+.icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.nav-text h2{
+  color: white;
+  font-size: 20px;
+  margin-left: 250px;
+}
+.icon-linkedin{
+  margin-left: 70px;
+}
+.projects_image img{
+  height: 350px;
+  width: 600px;
+}
+.projects_logo{
+  position: relative;
+  bottom: 350px;
+  z-index: 4;
+}
+.projects_logo img{
+  height: 60px;
+  width: 60px;
+}
+.projects_image{
+  z-index: 2;
+}
+.icon{
+  height: 50px;
+  width: 50px;
+  transition: .25s ease;
+  filter: grayscale(100%)
+}
+.icon:hover {
+  filter: none
+}
+.error404 img{
+  height: 90px;
+  width: 90px;
+}
+.error404{
+  padding-top: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.error404-1{
+  display: flex;
+  flex-direction: row;
+  padding-left: 350px;
+}
+.error404_1-2{
+  padding-top: 188px;
+}
+.error404_1-3{
+  padding-top: 188px;
+}
+.error404_3-2{
+  padding-top: 188px;
+}
+.error404_3-3{
+  padding-top: 188px;
+}
+.error404-3{
+  display: flex;
+  flex-direction: row;
+  padding-right: 350px;
+}
+.error404-2{
+  display: flex;
+  flex-direction: row;
+  padding-top: 100px;
+}
+.error404_2_2-2{
+  padding-top: 97px;
+}
+.error404-message{
+  color:white;
+  font-family: -apple-system;
+}
+.btn{
+  color: #101010;
+  background-color: #f10f4a;
+  border: none;
+  font-size: 25px;
+  margin-top: 30px;
+}
+.project{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project img{
+  width: 1500px;
+  height: 700px;
+}
+.project a{
+  color: whitesmoke;
+}
+

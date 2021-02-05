@@ -34,6 +34,11 @@ class Category
         $this->projects = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

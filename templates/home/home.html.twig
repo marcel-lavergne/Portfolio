@@ -1,19 +1,22 @@
 {% include 'base.html.twig' %}
 {% block body %}
     {% for project in projects %}
+        <hr>
         <div class="projects">
             <div class="projects_project">
+                <a href="projet/{{ project.id }}" >{{ project.name }}</a>
                 <div class="projects_image-logo">
                     <div class="projects_image">
-                        <img src="assets/images/project/{{ project.picture }}">
+                        <img src="{{ asset('build/images/project/'~project.picture) }}">
                     </div>
                     <div class="projects_logo">
-                        <img src="assets/images/logo/{{ project.langage }}">
+                        <img src="{{ asset('build/images/logo/'~project.logoPicture) }}">
                     </div>
                 </div>
                 <div class="projects_text">
-                    <h3>{{ project.name }}</h3>
-                    <p>{{ project.synopsis }}</p>
+                    <div class="projects_text-position">
+                        <p>{{ project.synopsis }}</p>
+                    </div>
                 </div>
             </div>
         </div>

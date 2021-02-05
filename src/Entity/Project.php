@@ -58,6 +58,11 @@ class Project
      */
     private $synopsis;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $logo_picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,6 +160,18 @@ class Project
     public function setSynopsis(string $synopsis): self
     {
         $this->synopsis = $synopsis;
+
+        return $this;
+    }
+
+    public function getLogoPicture(): ?string
+    {
+        return $this->logo_picture;
+    }
+
+    public function setLogoPicture(string $logo_picture): self
+    {
+        $this->logo_picture = $logo_picture;
 
         return $this;
     }

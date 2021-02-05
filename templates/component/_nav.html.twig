@@ -1,20 +1,45 @@
-<nav class="navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar">
     <div class="nav-text">
-        <h2>Portfolio</h2>
-        <h3>Marcel Lavergne</h3>
+        <a href="{{ path('home') }}">
+            <h3>Portfolio</h3>
+        </a>
     </div>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-                {% if app.user %}
-                    <a class="nav-link" href="{{ path('app_logout') }}" title="Deconnecter"> <i class="fa fa-2x fa-user"></i></a>
-                {% else %}
-                    <a class="nav-link" href="{{ path('app_login') }}" title="Connecter"> <i class="fa fa-2x fa-user"></i></a>
-                {% endif %}
-            </li>
-        </ul>
+    <div class="nav-text">
+        <h2>Marcel Lavergne</h2>
+    </div>
+    <div class="icons-network">
+        <a target="_BLANK" href="https://github.com/marcel-lavergne?tab=repositories">
+            <img
+                    class="icon icon-github"
+                    src="{{ asset('build/images/logo/github.svg') }}"
+                    alt="logo github"
+            />
+        </a>
+        <a target="_BLANK" href="https://www.linkedin.com/in/marcel-lavergne-902726198/">
+            <img
+                    class="icon icon-linkedin"
+                    src="{{ asset('build/images/logo/linkedin.svg') }}"
+                    alt="logo linkedin"
+            />
+        </a>
+    </div>
+    <div class="login-button">
+        {% if app.user %}
+            <a class="login" href="{{ path('app_logout') }}">
+                <img
+                        class="icon"
+                        src="{{ asset('build/images/logo/logout.svg') }}"
+                        alt="logout logo"
+                />
+            </a>
+        {% else %}
+            <a class="logout" href="{{ path('app_login') }}">
+                <img
+                        class="icon"
+                        src="{{ asset('build/images/logo/login.svg') }}"
+                        alt="login logo"
+                />
+            </a>
+        {% endif %}
     </div>
 </nav>

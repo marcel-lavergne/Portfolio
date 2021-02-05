@@ -11,21 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/project")
+ * @Route("/projet")
  */
 class ProjectController extends AbstractController
 {
-    /**
-     * @Route("/projet/{id}", name="project", methods={"GET"})
-     */
-    public function index(Project $project, ProjectRepository $repository): Response
-    {
-
-        return $this->render('project/index.html.twig', [
-            'project'=>$project,
-        ]);
-    }
-
     /**
      * @Route("/new", name="project_new", methods={"GET","POST"})
      */
@@ -40,7 +29,7 @@ class ProjectController extends AbstractController
             $entityManager->persist($project);
             $entityManager->flush();
 
-            return $this->redirectToRoute('project_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('project/new.html.twig', [
@@ -64,13 +53,16 @@ class ProjectController extends AbstractController
      */
     public function edit(Request $request, Project $project): Response
     {
+        if (empty($this->getUser())){
+            return $this->redirectToRoute('home');
+        }
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('project_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('project/edit.html.twig', [
@@ -90,6 +82,6 @@ class ProjectController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('project_index');
+        return $this->redirectToRoute('home');
     }
 }
